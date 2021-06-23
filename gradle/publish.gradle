@@ -1,0 +1,40 @@
+/*
+ * Scripts for publishing the Epublish war file to nexus.
+ *
+ * NB: This script is conditionally applied. Any new tasks will need to be 
+ * included in the conditions in build.gradle. 
+ *
+ * Usage: gradle publish
+ */
+ 
+
+// Make sure the required params are supplied. This is generally done by the CI job's 
+// "Properties Content" field with a prefix of ORG_GRADLE_PROJECT_  
+// e.g.  ORG_GRADLE_PROJECT_nexususer=auser
+// or they can be added locally to your gradle.properties
+assert project.hasProperty('nexususer'), 'properties for publishing must be provided'
+assert project.hasProperty('nexuspassword'), 'properties for publishing must be provided'
+assert System.env.BUILD_NUMBER, 'Publishing must be done by the appropriate Jenkins job' 
+
+
+// Define how maven-publish publishes to the nexus repository
+publishing {
+	publications {
+    	mavenWar(MavenPublication) {
+        	artifact tasks.war
+            artifactId "${war.baseName}"
+            version project.version
+    	}
+    	//println "publish project version: ${project.version}" 
+    }
+
+    repositories {
+        maven {
+            url "https://nexus-isa.csiro.au/content/repositories/cd/" 
+            credentials {
+            	username nexususer
+            	password nexuspassword 
+            }
+        }
+    }
+}

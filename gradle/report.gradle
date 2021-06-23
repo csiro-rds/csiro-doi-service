@@ -1,0 +1,44 @@
+
+
+apply plugin: 'pmd'
+//apply plugin: 'findbugs'
+apply plugin: 'checkstyle'
+
+checkstyle {
+    toolVersion = "5.9"
+    configFile = new File('config/checkstyle_checks.xml')
+    ignoreFailures = true
+    configProperties.putAt("projectDir", projectDir)
+    checkstyleMain 
+    {
+		classpath += configurations.compile
+	}
+	checkstyleTest 
+	{
+		classpath += configurations.compile
+	}
+}
+
+///findbugs {
+//    ignoreFailures = true
+//    reportLevel = "high"
+//    sourceSets = [ sourceSets.main ]
+//    toolVersion = "3.0.0"
+//}
+
+pmd {
+    toolVersion = "6.9.0"
+    ignoreFailures = true
+    sourceSets = [ sourceSets.main ]
+    // turn off the default rules
+    ruleSets = []
+    pmdMain() {
+        // only use the rules we define
+        ruleSetFiles = files("config/pmd/pmdRules.xml", "config/pmd/pmdRulesMain.xml")
+        excludes = ["**/DM3Reader.java"]
+    }
+    pmdTest() {
+        // only use shared rules and rules for test
+        ruleSetFiles = files("config/pmd/pmdRules.xml", "config/pmd/pmdRulesTest.xml")
+    }
+}

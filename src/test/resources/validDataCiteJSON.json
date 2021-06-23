@@ -1,0 +1,167 @@
+{
+    "data": {
+        "id": "10.80413/ef67-wh49",
+        "type": "dois",
+        "attributes": {
+            "doi": "10.80413/ef67-wh49",
+            "prefix": "10.80413",
+            "suffix": "ef67-wh49",
+            "identifiers": [],
+            "alternateIdentifiers": [],
+            "creators": [
+                {
+                    "name": "CSIRO",
+                    "nameType": "Organizational",
+                    "affiliation": [],
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Phillips, David",
+                    "nameType": "Personal",
+                    "givenName": "David",
+                    "familyName": "Phillips",
+                    "affiliation": []
+                },
+                {
+                    "name": "Gandhi, Rahul",
+                    "nameType": "Personal",
+                    "givenName": "Rahul",
+                    "familyName": "Gandhi",
+                    "affiliation": []
+                },
+                {
+                    "name": "Chapman, Alison",
+                    "nameType": "Personal",
+                    "givenName": "Alison",
+                    "familyName": "Chapman",
+                    "affiliation": []
+                },
+                {
+                    "name": "Green, Matt",
+                    "nameType": "Personal",
+                    "givenName": "Matt",
+                    "familyName": "Green",
+                    "affiliation": []
+                },
+                {
+                    "name": "Dravid, Rahul",
+                    "nameType": "Personal",
+                    "givenName": "Rahul",
+                    "familyName": "Dravid",
+                    "affiliation": []
+                },
+                {
+                    "name": "Smith, John",
+                    "nameType": "Personal",
+                    "givenName": "John",
+                    "familyName": "Smith",
+                    "affiliation": []
+                }
+            ],
+            "titles": [
+                {
+                    "title": "A conceptual sediment budget for the Vietnam Shelf"
+                }
+            ],
+            "publisher": "CSIRO",
+            "container": {},
+            "publicationYear": 2001,
+            "subjects": [
+                {
+                    "subject": "subject",
+                    "subjectScheme": "subjectScheme"
+                },
+                {
+                    "subject": "subject1",
+                    "subjectScheme": "subjectScheme1"
+                }
+            ],
+            "contributors": [],
+            "dates": [
+                {
+                    "date": "2001",
+                    "dateType": "Issued"
+                }
+            ],
+            "language": null,
+            "types": {
+                "ris": "RPRT",
+                "bibtex": "article",
+                "citeproc": "article-journal",
+                "schemaOrg": "ScholarlyArticle",
+                "resourceType": "Reports",
+                "resourceTypeGeneral": "Text"
+            },
+            "relatedIdentifiers": [],
+            "sizes": [],
+            "formats": [],
+            "version": null,
+            "rightsList": [],
+            "descriptions": [
+                {
+                    "description": "description",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "geoLocations": [],
+            "fundingReferences": [],
+            "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLQoKICAgIENvcHlyaWdodCAyMDEwLCBDU0lSTyBBdXN0cmFsaWEuCgogICAgTGljZW5zZWQgdW5kZXIgdGhlIEFwYWNoZSBMaWNlbnNlLCBWZXJzaW9uIDIuMCAodGhlICJMaWNlbnNlIik7CiAgICB5b3UgbWF5IG5vdCB1c2UgdGhpcyBmaWxlIGV4Y2VwdCBpbiBjb21wbGlhbmNlIHdpdGggdGhlIExpY2Vuc2UuCiAgICBZb3UgbWF5IG9idGFpbiBhIGNvcHkgb2YgdGhlIExpY2Vuc2UgYXQKCiAgICAgICAgICAgIGh0dHA6Ly93d3cuYXBhY2hlLm9yZy9saWNlbnNlcy9MSUNFTlNFLTIuMAoKICAgIFVubGVzcyByZXF1aXJlZCBieSBhcHBsaWNhYmxlIGxhdyBvciBhZ3JlZWQgdG8gaW4gd3JpdGluZywgc29mdHdhcmUKICAgIGRpc3RyaWJ1dGVkIHVuZGVyIHRoZSBMaWNlbnNlIGlzIGRpc3RyaWJ1dGVkIG9uIGFuICJBUyBJUyIgQkFTSVMsCiAgICBXSVRIT1VUIFdBUlJBTlRJRVMgT1IgQ09ORElUSU9OUyBPRiBBTlkgS0lORCwgZWl0aGVyIGV4cHJlc3Mgb3IgaW1wbGllZC4KICAgIFNlZSB0aGUgTGljZW5zZSBmb3IgdGhlIHNwZWNpZmljIGxhbmd1YWdlIGdvdmVybmluZyBwZXJtaXNzaW9ucyBhbmQKICAgIGxpbWl0YXRpb25zIHVuZGVyIHRoZSBMaWNlbnNlLgoKLS0+CjxyZXNvdXJjZSB4bWxucz0iaHR0cDovL2RhdGFjaXRlLm9yZy9zY2hlbWEva2VybmVsLTQiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhzaTpzY2hlbWFMb2NhdGlvbj0iaHR0cDovL2RhdGFjaXRlLm9yZy9zY2hlbWEva2VybmVsLTQgaHR0cDovL3NjaGVtYS5kYXRhY2l0ZS5vcmcvbWV0YS9rZXJuZWwtNC4xL21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuODA0MTMvRUY2Ny1XSDQ5PC9pZGVudGlmaWVyPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9Ik9yZ2FuaXphdGlvbmFsIj5DU0lSTzwvY3JlYXRvck5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+UGhpbGxpcHMsIERhdmlkPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5EYXZpZDwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5QaGlsbGlwczwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5HYW5kaGksIFJhaHVsPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5SYWh1bDwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5HYW5kaGk8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+Q2hhcG1hbiwgQWxpc29uPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5BbGlzb248L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+Q2hhcG1hbjwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5HcmVlbiwgTWF0dDwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+TWF0dDwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5HcmVlbjwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5EcmF2aWQsIFJhaHVsPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5SYWh1bDwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5EcmF2aWQ8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+U21pdGgsIEpvaG48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkpvaG48L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+U21pdGg8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlPkEgY29uY2VwdHVhbCBzZWRpbWVudCBidWRnZXQgZm9yIHRoZSBWaWV0bmFtIFNoZWxmPC90aXRsZT4KICA8L3RpdGxlcz4KICA8cHVibGlzaGVyPkNTSVJPPC9wdWJsaXNoZXI+CiAgPHB1YmxpY2F0aW9uWWVhcj4yMDAxPC9wdWJsaWNhdGlvblllYXI+CiAgPHJlc291cmNlVHlwZSByZXNvdXJjZVR5cGVHZW5lcmFsPSJUZXh0Ij5SZXBvcnRzPC9yZXNvdXJjZVR5cGU+CiAgPHN1YmplY3RzPgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0ic3ViamVjdFNjaGVtZSIgc2NoZW1lVVJJPSJzY2hlbWVVUkkiIHZhbHVlVVJJPSJ2YWx1ZVVyaSI+c3ViamVjdDwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9InN1YmplY3RTY2hlbWUxIiBzY2hlbWVVUkk9InNjaGVtZVVSSTEiIHZhbHVlVVJJPSJ2YWx1ZVVyaTEiPnN1YmplY3QxPC9zdWJqZWN0PgogIDwvc3ViamVjdHM+CiAgPGRlc2NyaXB0aW9ucz4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9IkFic3RyYWN0Ij5kZXNjcmlwdGlvbjwvZGVzY3JpcHRpb24+CiAgPC9kZXNjcmlwdGlvbnM+CjwvcmVzb3VyY2U+",
+            "url": "https://doiserv.csiro.au",
+            "contentUrl": null,
+            "metadataVersion": 0,
+            "schemaVersion": "http://datacite.org/schema/kernel-4",
+            "source": null,
+            "isActive": true,
+            "state": "findable",
+            "reason": null,
+            "landingPage": null,
+            "viewCount": 0,
+            "viewsOverTime": [],
+            "downloadCount": 0,
+            "downloadsOverTime": [],
+            "referenceCount": 0,
+            "citationCount": 0,
+            "citationsOverTime": [],
+            "partCount": 0,
+            "partOfCount": 0,
+            "versionCount": 0,
+            "versionOfCount": 0,
+            "created": "2020-09-18T06:27:47.000Z",
+            "registered": "2020-09-18T06:27:48.000Z",
+            "published": "2001",
+            "updated": "2020-09-18T06:27:48.000Z"
+        },
+        "relationships": {
+            "client": {
+                "data": {
+                    "id": "csiro.repo",
+                    "type": "clients"
+                }
+            },
+            "media": {
+                "data": {
+                    "id": "10.80413/ef67-wh49",
+                    "type": "media"
+                }
+            },
+            "references": {
+                "data": []
+            },
+            "citations": {
+                "data": []
+            },
+            "parts": {
+                "data": []
+            },
+            "partOf": {
+                "data": []
+            },
+            "versions": {
+                "data": []
+            },
+            "versionOf": {
+                "data": []
+            }
+        }
+    }
+}

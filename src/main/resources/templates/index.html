@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOI Service</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="shortcut icon" type="image/png" href="favicon/logo.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="DOI Service home page"/>
+	<meta charset="UTF-8"/>
+	</head>
+<body>
+    <div class="page">
+        <!-- ##### HEADER REGION ##### -->
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" id="hdr">
+            <tr>
+			<td class="logo hideable" width="70" valign="middle" rowspan="2">
+			<img src="https://www.csiro.au/media/logo.png" alt="CSIRO logo" scale="0"></td>                
+			<td class="texture" colspan="2">
+                    <span class="systemtitle">DOI Service</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="header-utils" style="text-align: left" align="left">
+                    <a href="/doiserv">Home</a> | <a href="https://confluence.csiro.au/display/ISA/DOI+Service" target="_about">About</a> | <a href="/doiserv/swagger-ui/">API</a>
+                </td>
+            </tr>
+        </table>
+        
+        
+        <div id="main">
+            
+<div class="jumbotron">
+    <h2>Welcome to the DOI Service</h2>
+    <p>
+		The DOI Service (DOISERV) is a web application that provides an interface to the DOI Minting Service hosted by DataCite. The application provides a REST-API that allows its callers to create and manage Digital Object Identifiers (DOIs).</p>
+</div>
+
+
+
+        </div>
+        <!-- ##### FOOTER REGION ##### -->
+        <div id="footer">
+            <p>
+                &copy;CSIRO | <a href="http://go.csiro.au/FwLink/ias-csiro-legal">Legal Notice and Disclaimer</a> | 
+                 <a href="http://go.csiro.au/FwLink/ias-csiro-privacy">Privacy</a> | <a href="http://go.csiro.au/FwLink/ias-csiro-copyright">Copyright</a> | Server Name: 
+                 <span id='lblLastUpdatedDate' th:text="${serverName}"></span>, Build Number:
+                <span id='lblVersion' th:text="${buildNumber}"></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

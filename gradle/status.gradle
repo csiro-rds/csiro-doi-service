@@ -1,0 +1,63 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "http://jenkins-apps.it.csiro.au:8081/nexus/content/repositories/releases/"}
+        //        maven { url "file:C:/projects/repo" }
+    }
+    dependencies {
+        classpath 'au.csiro:serverStatus:1.0.3'
+    }
+}
+
+assert project.hasProperty('targetEnv'), 'The target environment for the deployment must be specified.'
+
+ext.status=0    // used in statusTest
+
+// Select the server to do the status check on
+ext {
+    endpoint = ""
+    switch (targetEnv.toLowerCase() ) {
+        
+        case "dev":
+            endpoint = 'http://doi-serv1-dev.it.csiro.au:8080/doiserv/actuator/health'
+            break;
+        case "test":
+            endpoint = 'http://doi-serv1-test.it.csiro.au:8080/doiserv/actuator/health'
+            break;
+        case "prod":
+            endpoint = 'http://doi-serv1-prod.it.csiro.au:8080/doiserv/actuator/health'
+            break;
+        default:
+            throw new InvalidUserDataException("Unexpected targetEnv of '${targetEnv}'")
+    }
+}
+
+task status(type: au.csiro.serverStatus.ServerStatus) {
+    description 'This task checks the status of the DOI Server and if not OK then an exception will be thrown that will stop execution of all following tasks.'
+
+    uri=endpoint
+    timeout=5000
+    attempts=18
+
+    doLast {
+        if (response != null) {
+            status=response.getStatus()
+            // Generally if the status != 200 then an exception is thrown that will bypass this
+            if (status != 200) {
+                throw new ResourceException("DOI Status is not OK - The Status Server says: ${response.getData()}");
+            }
+        } else {
+            throw new ResourceException("DOI Status is not OK - there is no response at all");
+        }
+    }
+}
+
+// TODO: Replace with unit test
+task statusTest (dependsOn: 'status') {
+    description 'Run this for testing. Start server, Run this (statusTest) && expect NO ERROR MESSAGE (assert succeeds) BUT WILL GET A MESSAGE "statusTest success".  STOP SERVER or make the status fail, Run this (statusTest) && SHOULD GET AN EXCEPTION.'
+    doLast {
+        // this block will only execute if there wasn't an exception
+        assert status == 200: "Should  not hit this if there is a server error (down / not available / ...)"
+        println "statusTest success"
+    }
+}

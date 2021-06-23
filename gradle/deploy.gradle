@@ -1,0 +1,131 @@
+/*
+ * Scripts for deploying rpr to a server.
+ *
+ * Currently this is hard coded to use dev, but this can be made more general  
+ * when the work on test deployment is done. 
+ * NB: This script is conditionally applied. Any new tasks will need to be 
+ * included in the conditions in build.gradle. 
+ *
+ * Usage: gradle deployToDev
+ */
+ 
+
+// Make sure the required params are supplied. This is generally done by the CI job's 
+// "Properties Content" field with a prefix of ORG_GRADLE_PROJECT_  
+// e.g.  ORG_GRADLE_PROJECT_deployuser=auser
+// or they can be added locally to your gradle.properties
+assert project.hasProperty('deployuser'), 'Properties for deployment must be provided'
+assert project.hasProperty('deploypassword'), 'Properties for deployment must be provided'
+assert System.env.BUILD_NUMBER, 'Deploying must be done by the appropriate Jenkins job' 
+assert project.hasProperty('targetEnv'), 'The target environment for the deployment must be specified.'
+
+// Ssh settings
+ssh.settings {
+  knownHosts = allowAnyHosts    // Disable host key verification
+}
+
+// Select the server to be deployed to
+ext {
+	remoteHost = ""
+	tomcatRemoteDir = ""
+	switch (targetEnv.toLowerCase() ) {
+		case "dev":
+            remoteHost = 'doi-serv1-dev.it.csiro.au'
+            tomcatRemoteDir = '/srv/tomcat9/doiserv'
+            break;
+        case "test":
+            remoteHost = 'doi-serv1-test.it.csiro.au'
+            tomcatRemoteDir = '/srv/tomcat9/doiserv'
+            break;
+        case "prod":
+            remoteHost = 'doi-serv1-prod.it.csiro.au'
+            tomcatRemoteDir = '/srv/tomcat9/doiserv'
+            break;
+        default:
+            throw new InvalidUserDataException("Unexpected targetEnv of '${targetEnv}'")
+	}
+}
+
+// Define the remote server we are interacting with.
+remotes {
+	targetServer {
+		host = remoteHost
+		user = deployuser
+		password = deploypassword
+	}
+}
+
+def downloadFolder = "${buildDir}/download"
+def downloadedArtifact = file("${downloadFolder}/doiserv.war")
+
+task deployToServer {
+	doLast {
+		description 'Deploy doi service to the required server. Intended for use by the CI job only.'
+		group 'Continuous Delivery'
+	
+	    ssh.run {
+	        ssh.settings {
+	            // Enable PTY allocation for sudo
+	            pty = true
+	        }
+	    
+	        // Note: Each sudo command here must be specifically allowed in the remote host sudoers config.
+	    	session(remotes.targetServer) {
+	            // stop server
+	            println "Stopping Tomcat Server"
+	            execute("sudo systemctl stop doiserv.service")
+		   
+	            // clean out the old war file.
+				println "Cleaning out old app at ${tomcatRemoteDir}/webapps/${war.baseName}"
+				execute("sudo ${tomcatRemoteDir}/cleanupwarfile ${war.baseName}")
+				
+				// put war file
+	            println "Deploying doiserv build ${project.version} to server ${remotes.targetServer.host}"
+	            println "Uploading ${downloadedArtifact} to ${tomcatRemoteDir}/webapps/doiserv.war"
+	            put from: downloadedArtifact, into: "${tomcatRemoteDir}/webapps/doiserv.war"
+	            
+	            println "Starting Tomcat Server"
+	            execute("sudo systemctl start doiserv.service")
+	        }
+	    }
+    }
+}
+
+task stopServer {
+	doLast{
+		description 'Stop Server prior to Database Backup. Intended for use by the CI job only.'
+		group 'Continuous Delivery'
+	
+	    ssh.run {
+	        ssh.settings {
+	            // Enable PTY allocation for sudo
+	            pty = true
+	        }
+	
+	        // Note: Each sudo command here must be specifically allowed in the remote host sudoers config.
+	        session(remotes.targetServer) {
+	            println "Stopping server: ${remotes.targetServer.host}"
+	            execute("sudo systemctl stop doiserv.service")
+	        }
+		}
+	}
+}
+
+task makeDownloadFolder() {
+	mkdir file(downloadFolder)
+}
+
+task downloadBinaryArchive(dependsOn: makeDownloadFolder) {
+	description 'Download our target war file from the nexus repository'
+	group 'Continuous Delivery'
+
+	doLast {
+	    ext {
+	        binaryUrl = "https://nexus-isa.csiro.au/repository/cd/au/csiro/${war.baseName}/${project.version}/${war.baseName}-${project.version}.war"
+	    }
+	
+		ant.get(src: binaryUrl, dest: downloadedArtifact)
+	}
+}
+
+deployToServer.dependsOn(downloadBinaryArchive)

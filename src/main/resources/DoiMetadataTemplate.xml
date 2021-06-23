@@ -1,0 +1,52 @@
+<!--
+
+    Copyright 2010, CSIRO Australia.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://datacite.org/schema/kernel-4"
+	xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd">
+	<identifier identifierType="DOI">10.2312/meyniana.2005.57.101</identifier>
+	<creators>
+		<creator>
+			<creatorName>Smith, John</creatorName>
+			<givenName>John</givenName>
+			<familyName>Smith</familyName>
+			<nameIdentifier schemeURI="http://orcid.org/" nameIdentifierScheme="ORCID">0000-0001-5000-0007</nameIdentifier>
+			<affiliation>DataCite</affiliation>
+		</creator>
+	</creators>
+	<titles>
+		<title>A conceptual sediment budget for the Great Barrier Reef</title>
+	</titles>
+	<publisher>
+Institut für Geowissenschaften, Christian-Albrechts-Universität, Kiel
+</publisher>
+<publicationYear>2005</publicationYear>
+<resourceType resourceTypeGeneral="Collection">Grey literature</resourceType>
+<relatedIdentifiers>
+	<relatedIdentifier relatedIdentifierType="URL" relationType="Cites"></relatedIdentifier>
+</relatedIdentifiers>
+<subjects>
+    <subject subjectScheme="scheme" schemeURI="schemeUri" valueURI="valueUri">subject</subject>
+</subjects>
+<descriptions>
+    <description descriptionType="Abstract">Description</description>
+</descriptions>
+<geoLocations>
+	<geoLocation>
+	</geoLocation>
+</geoLocations>
+</resource>

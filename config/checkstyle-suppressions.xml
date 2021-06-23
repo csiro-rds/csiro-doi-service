@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<!--
+  Lists suppressions for checkstyle. That is files and the checks that should not be run on those files.
+  Use checks=".*" to stop any checking of a particular file.
+
+  Copyright 2011, CSIRO Australia
+  All rights reserved.
+
+  @author James Dempsey on 29 Sep 2011
+  @version: $Revision$ $Date$
+
+ -->
+
+<!DOCTYPE suppressions PUBLIC
+     "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+     "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+<suppressions>
+	<suppress checks=".*"
+              files="au.csiro.dap.util.external.*"
+    />
+
+    <!-- Suppressions for unit testing code --> 
+    <suppress 
+        checks="MagicNumber" 
+        files="[/\\](test|testint|testcommon)[/\\]" 
+    />
+    <suppress
+        checks="JavadocMethod" 
+        files="[/\\](test|testint|testcommon)[/\\]" 
+    /> 
+    <suppress 
+        checks="JavadocVariable" 
+        files="[/\\](test|testint|testcommon)[/\\]" 
+    /> 
+    <suppress
+        checks="IllegalThrows" 
+        files="[/\\](test|testint|testcommon)[/\\]" 
+    /> 
+    <suppress 
+        checks="ImportControl" 
+        files="[/\\](test|testint|testcommon)[/\\]" 
+    /> 
+    <suppress 
+        checks="VisibilityModifierCheck" 
+        files="[/\\](test|testint|testcommon)[/\\]" 
+    /> 
+    <suppress 
+        checks="FinalClassCheck" 
+        files="[/\\]src" 
+    /> 
+
+</suppressions>

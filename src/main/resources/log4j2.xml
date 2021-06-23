@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [${hostName}] [%t] (DOI-SVC#%C:%L) %m %rThrowable%n</Property>
+        <Property name="APP_LOG_ROOT">/srv/tomcat9/doiserv/logs</Property>
+    </Properties>
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+        </Console>
+  
+        <RollingFile name="FILE"
+            fileName="${APP_LOG_ROOT}/doiserv.log"
+            filePattern="${APP_LOG_ROOT}/$${date:yyyy-MM}/doiserv-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+            <Policies>
+            	<TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="19500KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingFile>
+    </Appenders>
+    
+   <Loggers>
+   	   
+   	    <Logger name="org.springframework" level="ERROR" additivity="false">
+           	<AppenderRef ref="CONSOLE" />
+			<AppenderRef ref="FILE" />
+        </Logger>
+        
+        <Logger name="org.hibernate" level="ERROR" additivity="false">
+           	<AppenderRef ref="CONSOLE" />
+			<AppenderRef ref="FILE" />
+        </Logger>
+       
+        <logger name="com.zaxxer.hikari" level="DEBUG" additivity="false">
+                <AppenderRef ref="CONSOLE"/>
+                <AppenderRef ref="FILE" />
+        </logger>
+        
+        <logger name="com.zaxxer.hikari.HikariConfig" level="DEBUG" additivity="false">
+                <AppenderRef ref="CONSOLE"/>
+                <AppenderRef ref="FILE" />
+        </logger>
+        
+		<Logger name="au.csiro.doi.svc" level="DEBUG" additivity="false">
+			<AppenderRef ref="CONSOLE" />
+			<AppenderRef ref="FILE" />
+		</Logger>
+		
+		<Root level="DEBUG">
+			<AppenderRef ref="CONSOLE" />
+			<AppenderRef ref="FILE" />
+		</Root>
+  </Loggers>
+</Configuration>

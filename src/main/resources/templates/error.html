@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOI Service</title>
+    <link rel="stylesheet" href="/doiserv/css/style.css"/>
+    <link rel="shortcut icon" type="image/png" href="/doiserv/favicon/logo.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="DOI Service error page" />
+	<meta charset="UTF-8"/>
+    </head>
+    <body>
+        <div class="page">
+        <!-- ##### HEADER REGION ##### -->
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" id="hdr">
+            <tr>
+			<td class="logo hideable" width="70" valign="middle" rowspan="2">
+			<img src="https://www.csiro.au/media/logo.png" alt="CSIRO logo" scale="0"></td>                
+			<td class="texture" colspan="2">
+                    <span class="systemtitle">DOI Service</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="header-utils" style="text-align: left" align="left">
+                    <a href="/doiserv">Home</a> | <a href="https://confluence.csiro.au/display/ISA/DOI+Service" target="_about">About</a> | <a href="/doiserv/swagger-ui/">API</a>
+                </td>
+            </tr>
+        </table>
+        
+        <div id="main">
+            
+<div class="errorpage">
+	<br>
+    <h1><strong>Sorry, this page isn't available.</strong></h1>
+        <h1 th:text="${errorCode}">404</h1>
+        <br>
+        <p> The link you followed may be broken, or the page may have been removed. Go
+        <a href="/doiserv"> back </a>to the Home page.<br> To report an issue
+        <a href="mailto:CSIROServiceDesk@csiro.au?subject=DOI Service Error"> contact </a>
+        the Service Desk.</p>
+</div>
+        </div>
+        <!-- ##### FOOTER REGION ##### -->
+        <div id="footer">
+            <p>
+                &copy;CSIRO | <a href="http://go.csiro.au/FwLink/ias-csiro-legal">Legal Notice and Disclaimer</a> | 
+                 <a href="http://go.csiro.au/FwLink/ias-csiro-privacy">Privacy</a> | <a href="http://go.csiro.au/FwLink/ias-csiro-copyright">Copyright</a> | Server Name: 
+                 <span id='lblLastUpdatedDate' th:text="${serverName}"></span>, Build Number:
+                <span id='lblVersion' th:text="${buildNumber}"></span>
+            </p>
+        </div>
+    </div>
+    </body>
+</html>
