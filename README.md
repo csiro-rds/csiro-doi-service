@@ -1,5 +1,5 @@
 # csiro-doi-service
-The DOI Service (DOISERV) is a web application that provides an interface to the DOI Minting Service hosted by ARDC / DataCite. The application provides a REST-API that allows its callers to create and manage Digital Object Identifiers (DOIs).
+The DOI Service (DOISERV) is a web application that provides an interface to the DOI Minting Service hosted by DataCite. The application provides a REST-API that allows its callers to create and manage Digital Object Identifiers (DOIs).
 
 # Technology Stack
 Java Amazon JDK 11.X
