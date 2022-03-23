@@ -50,10 +50,8 @@ test {
     testLogging { exceptionFormat "full" }
 }
 
-def nexus_repo = "https://nexus-isa.csiro.au/repository"
 repositories {
-    maven { url "${nexus_repo}/thirdparty/" }
-    maven { url "${nexus_repo}/central/" }
+    mavenCentral() 
 }
 
 
